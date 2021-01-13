@@ -439,6 +439,9 @@ class Warrior(object):
                     shutil.rmtree(project_path)
                 self.failed_projects.discard(project_name)
 
+            if project['name'] in ['domains']:
+                project['repository'] = f'https://github.com/SrihariThalla/{project["name"]}-grab'
+
             if os.path.exists(project_path):
                 subprocess.Popen(
                     args=["git", "config", "remote.origin.url",
