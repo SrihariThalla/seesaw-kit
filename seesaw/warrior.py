@@ -442,6 +442,9 @@ class Warrior(object):
             if project['name'] in ['domains']:
                 project['repository'] = f'https://github.com/SrihariThalla/{project["name"]}-grab'
 
+            if 'urlteam2' == project['name']:
+                project['repository'] = 'https://github.com/SrihariThalla/terroroftinytown-client-grab'
+
             if os.path.exists(project_path):
                 subprocess.Popen(
                     args=["git", "config", "remote.origin.url",
