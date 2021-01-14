@@ -439,11 +439,14 @@ class Warrior(object):
                     shutil.rmtree(project_path)
                 self.failed_projects.discard(project_name)
 
-            if project['name'] in ['domains', 'github', 'reddit', 'urls']:
+            if project['name'] in ['domains', 'reddit', 'urls']:
                 project['repository'] = f'https://github.com/SrihariThalla/{project["name"]}-grab'
 
             if 'urlteam2' == project['name']:
                 project['repository'] = 'https://github.com/SrihariThalla/terroroftinytown-client-grab'
+
+            if 'githubtest2' == project['name']:
+                project['repository'] = 'https://github.com/SrihariThalla/github-grab'
 
             if os.path.exists(project_path):
                 subprocess.Popen(
